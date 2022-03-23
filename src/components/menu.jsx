@@ -1,21 +1,11 @@
 import { Home,ContactPhone,People,} from '@mui/icons-material'
 import MenuIcon from '@mui/icons-material/Menu';
-import { useEffect, useState } from 'react';
 import Li from './menu_li';
 export default function Menu() {
-    const [offset, setOffset] = useState(0);
-    useEffect(() => {
-        const onScroll = () => setOffset(window.pageYOffset);
-        window.removeEventListener('scroll', onScroll);
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
-    },[]);
-    console.log(offset);
     return(
         <nav>
             <input type="checkbox" id='burger' />
             <label htmlFor='burger'>&nbsp;&nbsp;<MenuIcon/>&nbsp;<span>Menu</span></label>
-            <div className={offset > 646 ?'weat':null}></div>
             <ul className='ul1'>
                 <Li to="/" icon={<Home/>} child='Home' />
                 <Li to="contacts" icon={<ContactPhone/>} child='Contact' />
