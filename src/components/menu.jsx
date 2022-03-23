@@ -13,15 +13,13 @@ export default function Menu() {
     console.log(offset);
     return(
         <nav>
-            <div className={offset > 646 ?'weat':null}></div>
             <input type="checkbox" id='burger' />
             <label htmlFor='burger'>&nbsp;&nbsp;<MenuIcon/>&nbsp;<span>Menu</span></label>
+            <div className={offset > 646 ?'weat':null}></div>
             <ul className='ul1'>
                 <Li to="/" icon={<Home/>} child='Home' />
                 <Li to="contacts" icon={<ContactPhone/>} child='Contact' />
                 <Li to="about" icon={<People/>} child='About Us' /> 
-            </ul>
-            <ul className='ul2'>
                 <Li to="home" child='Sign In' class='signin'/>
                 <Li to="home" child='Sign Up' class='signup'/>
             </ul>
