@@ -17,7 +17,7 @@ export default function Menu() {
             <input type="checkbox" id='burger' />
             <label htmlFor='burger'>&nbsp;&nbsp;<MenuIcon/>&nbsp;<span>Menu</span></label>
             <ul className='ul1'>
-                <Li to="home" icon={<Home/>} child='Home' />
+                <Li to="/" icon={<Home/>} child='Home' />
                 <Li to="contacts" icon={<ContactPhone/>} child='Contact' />
                 <Li to="about" icon={<People/>} child='About Us' /> 
             </ul>
