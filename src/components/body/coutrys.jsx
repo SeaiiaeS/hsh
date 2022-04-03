@@ -1,8 +1,9 @@
 export default function Countrys(props) {
     return(
-        <div style={{width:'20%',height:'200px'}}>
-            <img src={props.img} alt="" width='100%' heigth='180px' />
-            <h4 style={{textAlign:'center'}}>{props.country}</h4>
+        <div className="countrys_box" >
+            <img src={props.img} alt="" /> 
+            <h4>{props.country}</h4>
+            <a target='_blank' rel="noreferrer" href={props.map}><button>See On Map</button></a>
         </div>
     )
 }

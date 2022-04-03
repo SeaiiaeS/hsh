@@ -6,30 +6,11 @@ import {
     Route
 } from 'react-router-dom'
 import Home from './components/body/home';
-import { useEffect, useState } from 'react';
+import useFetch from './hooks/useFetch';
 
 export default function App() {
     let a='https://restcountries.com/v3.1/all'
-    const[info,setinfo]=useState()
-    useEffect(()=>{
-        function hendleSend(){
-            fetch(a)
-            .then((response)=>{
-                console.log(response);
-                if (!response.ok) {
-                    throw new Error('adress error') 
-                }
-                return response.json()    
-            })  
-            .then((data)=>{
-                setinfo(()=>{
-                    return {data}
-                })    
-            })
-            .catch((a)=> console.log(a))
-        }
-        hendleSend()
-    },[a])
+    const[info]=useFetch(a)
     console.log(info);
     return(
         <div className='div1'>
